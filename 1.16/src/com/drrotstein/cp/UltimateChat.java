@@ -1,10 +1,13 @@
 package com.drrotstein.cp;
 
+import java.util.ArrayList;
+
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.drrotstein.cp.chateditor.ChatEditorManager;
+import com.drrotstein.cp.commands.CommandBypassAntispam;
 import com.drrotstein.cp.commands.CommandCancelEditor;
 import com.drrotstein.cp.commands.CommandChatSettings;
 import com.drrotstein.cp.commands.CommandJoinMessage;
@@ -15,7 +18,6 @@ import com.drrotstein.cp.commands.CommandTextFormat;
 import com.drrotstein.cp.eventhandlers.InventoryClickHandler;
 import com.drrotstein.cp.eventhandlers.PlayerChatHandler;
 import com.drrotstein.cp.eventhandlers.PlayerJoinQuitHandler;
-import com.drrotstein.cp.helpers.ChatHelper;
 import com.drrotstein.cp.helpers.ChatSettingsHelper;
 import com.drrotstein.cp.helpers.ConfigHelper;
 
@@ -23,6 +25,8 @@ public class UltimateChat extends JavaPlugin {
 	
 	private static UltimateChat plugin;
 	
+	
+	public static final ArrayList<Player> bypassAntispam = new ArrayList<>();
 	
 	@Override
 	public void onEnable() {
@@ -68,8 +72,8 @@ public class UltimateChat extends JavaPlugin {
 		getCommand("quitmessage").setExecutor(new CommandQuitMessage()); getCommand("quitmessage").setTabCompleter(new CommandQuitMessage());
 		
 		getCommand("repeatmessages").setExecutor(new CommandRepeatMessages()); getCommand("repeatmessages").setTabCompleter(new CommandRepeatMessages());
-		
 		getCommand("slowmode").setExecutor(new CommandSlowMode()); getCommand("slowmode").setTabCompleter(new CommandSlowMode());
+		getCommand("bypassantispam").setExecutor(new CommandBypassAntispam()); getCommand("bypassantispam").setTabCompleter(new CommandBypassAntispam());
 		
 		getCommand("canceleditor").setExecutor(new CommandCancelEditor());
 		
