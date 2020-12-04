@@ -1,5 +1,5 @@
 name: UltimateChat
-version: 1.0
+version: 1.1
 api-version: 1.16
 main: com.drrotstein.cp.UltimateChat
 commands:
@@ -22,6 +22,11 @@ commands:
     description: With the slowmode, players have to wait a given time before typing another message
     permission: uc.antispam
     aliases: sm
+    
+  bypassantispam:
+    description: Bypass any antispam methods.
+    permission: uc.bypassantispam
+    aliases: bas
     
   chatsettings:
     description: Edit all the chat settings
