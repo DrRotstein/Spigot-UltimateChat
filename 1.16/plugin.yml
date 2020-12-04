@@ -1,0 +1,43 @@
+name: UltimateChat
+version: 1.1
+api-version: 1.16
+main: com.drrotstein.cp.UltimateChat
+commands:
+  joinmessage:
+    description: Edit the join message
+    permission: uc.jqm
+    aliases: jm
+    
+  quitmessage:
+    description: Edit the quit message
+    permission: uc.jqm
+    aliases: qm
+    
+  repeatmessages:
+    description: Toggle, if players can type the same message multiple times, and how often.
+    permission: uc.antispam
+    aliases: rm
+    
+  slowmode:
+    description: With the slowmode, players have to wait a given time before typing another message
+    permission: uc.antispam
+    aliases: sm
+    
+  bypassantispam:
+    description: Bypass any antispam methods.
+    permission: uc.bypassantispam
+    aliases: bas
+    
+  chatsettings:
+    description: Edit all the chat settings
+    permission: uc.uc
+    aliases: cs
+    
+  canceleditor:
+    description: Cancel a current editor
+    permission: uc.editor
+    
+  chatformat:
+    description: Edit the format of chatmessages, ex. Player writes message
+    permission: uc.chatformat
+    aliases: cf
